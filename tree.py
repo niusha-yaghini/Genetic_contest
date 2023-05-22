@@ -47,7 +47,7 @@ class Tree:
         self.two_D_flag = _two_D_flag
         self.root = None
         # self.in_order = None
-        self.mae = None        
+        self.mse = None        
         
     def _fit(self):
         self.root = self._grow_tree(self.max_depth, self.two_D_flag)
@@ -186,16 +186,9 @@ def calculator(two_D_flag, root, x, flag):
                         flag = True
                         return 1
                 return x
-        
-def mean_abs_error(true_y, my_y):
-    amount = len(my_y)
-    sum = 0
-    for i in range(amount):
-        sum += abs(my_y[i]-true_y[i])
-    return sum/amount
-        
-def _mae(tree, list_x, list_y):
-    # calculating each tree mae with given inputs and outputs
+                
+def _mse(tree, list_x, list_y):
+    # calculating each tree mse with given inputs and outputs
     
     trees_y = []
     for single_x in list_x:
@@ -205,23 +198,23 @@ def _mae(tree, list_x, list_y):
             t_y = 100000
 
         trees_y.append(t_y)
-    mae = mean_abs_error(list_y, trees_y)
-    return mae
+    mse = mean_squared_error(list_y, trees_y)
+    return mse
 
-def calculating_mae(tree_list, X, Y):
-    # calculating the average-mae and best-mae for all of our trees and given inputs and outputs
+def calculating_mse(tree_list, X, Y):
+    # calculating the average-mse and best-mse for all of our trees and given inputs and outputs
     
     i = 1
-    mae_sum = 0
-    best_mae = float('inf')
+    mse_sum = 0
+    best_mse = float('inf')
     best_tree = None
     for t in tree_list:
-        t.mae = _mae(t, X, Y)
-        mae_sum += t.mae
-        if (t.mae<best_mae):
-            best_mae = t.mae
+        t.mse = _mse(t, X, Y)
+        mse_sum += t.mse
+        if (t.mse<best_mse):
+            best_mse = t.mse
             best_tree = t
-        # print(f"tree number {i} = {t.in_order} and its mae is = {t.mae}")
+        # print(f"tree number {i} = {t.in_order} and its mse is = {t.mse}")
         i += 1
 
-    return mae_sum/i, best_mae, best_tree
+    return mse_sum/i, best_mse, best_tree

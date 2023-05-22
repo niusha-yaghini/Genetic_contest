@@ -83,16 +83,16 @@ def cross_over(parent1, parent2, pc):
                    
 def tournament(p_trees, k):
     # using the tournament preceture for selecting a couple tree
-    # in this method we choose 3 tree randomly 2 times (2 times becuase we want a couple), and select the best-mae tree
+    # in this method we choose 3 tree randomly 2 times (2 times becuase we want a couple), and select the best-mse tree
     
     couple_parent = []
     for j in range(2):
-        best_mae = float('inf')
+        best_mse = float('inf')
         best_tree = None
         for z in range(k):
             t = rnd.choice(p_trees)  
-            if(t.mae<best_mae):
-                best_mae = t.mae
+            if(t.mse<best_mse):
+                best_mse = t.mse
                 best_tree = t
         couple_parent.append(best_tree)
     return couple_parent[0], couple_parent[1]       
