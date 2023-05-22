@@ -11,7 +11,7 @@ def my_operator():
 # choosing the leaf
 def my_leaf_one_D():
     num = rnd.randint(1, 9)
-    var = 'x1'
+    var = 'x'
     x = rnd.random()
     if(x<=0.5): return num
     else: return var
@@ -46,7 +46,6 @@ class Tree:
         self.max_depth = _max_depth
         self.two_D_flag = _two_D_flag
         self.root = None
-        # self.in_order = None
         self.mse = None        
         
     def _fit(self):
@@ -83,37 +82,26 @@ class Tree:
         if(depth==0): n.is_leaf = True
         return n          
 
-    # def print_tree(self):
-        # making the inorder show of our tree
-        
-        # self.in_order = self.to_math_string(self.root)
-        # print(self.in_order)        
-   
-def to_math_string(node):
+def PreorderTraversal(node):
+    res = []
     if(node.is_leaf):
-        return f"{node.operator}"
+        return node.operator
     else:
+        res.append(node.operator)
         if(len(node.children)) == 1:
-            return f"{node.operator}({to_math_string(node.children[0])})"
+            res.append(PreorderTraversal(node.children[0]))
         else:
-            return f"({to_math_string(node.children[0])}{node.operator}{to_math_string(node.children[1])})"
-
-def tree_making(max_depth, two_D_flag):  
-    # making each of our trees
-
-    t = Tree(max_depth, two_D_flag)
-    t._fit()
-    # t.print_tree()
-    return t     
+            res.append(PreorderTraversal(node.children[0]))
+            res.append(PreorderTraversal(node.children[1]))    
         
 def random_trees(amount, max_depth, two_D_flag):
     # making a list of all random trees (generation 0)
 
     trees = []
     for i in range(amount):
-        # print(f"tree number {i+1} is: ", end='')
-        tree = tree_making(max_depth, two_D_flag)
-        trees.append(tree)
+        t = Tree(max_depth, two_D_flag)
+        t._fit()
+        trees.append(t)
     return trees
         
 def calculator(two_D_flag, root, x, flag):
@@ -174,7 +162,6 @@ def calculator(two_D_flag, root, x, flag):
                 flag = True
                 return 1
             else: 
-                # return left_val ** right_val
                 if(right_val==0):
                     return 1
                 x = 1
@@ -204,7 +191,7 @@ def _mse(tree, list_x, list_y):
 def calculating_mse(tree_list, X, Y):
     # calculating the average-mse and best-mse for all of our trees and given inputs and outputs
     
-    i = 1
+    # i = 1
     mse_sum = 0
     best_mse = float('inf')
     best_tree = None
@@ -215,6 +202,6 @@ def calculating_mse(tree_list, X, Y):
             best_mse = t.mse
             best_tree = t
         # print(f"tree number {i} = {t.in_order} and its mse is = {t.mse}")
-        i += 1
+        # i += 1
 
-    return mse_sum/i, best_mse, best_tree
+    return best_mse, best_tree

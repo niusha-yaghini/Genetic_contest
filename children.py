@@ -138,16 +138,16 @@ def making_children(parent_trees, k, pc, pm):
     children = []
     
     for i in range(int(lenght/2)):
+        
         #returning a couple of parents
-        parent1, parent2 = tournament(parent_trees, k)        
+        parent1, parent2 = tournament(parent_trees, k)     
+           
         # we pass our couple to cross-over function(that 'pc' percent will do it)
         child1, child2 = cross_over(parent1, parent2, pc)
+        
         children.append(child1)
         children.append(child2)
     
     mutation(children, pm)
-
-    # for c in children:
-    #     c.print_tree()
 
     return children
