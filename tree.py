@@ -2,7 +2,6 @@ import random as rnd
 from sklearn.metrics import mean_squared_error
 import math
 
-
 # choosing the operator
 def my_operator():
     op = ['+', '-', '*', '/', '**', 'sin', 'cos']
@@ -54,7 +53,7 @@ class Tree:
     def _grow_tree(self, max_depth, two_D_flag, CS = 2):
         
         # choosing a rnd depth each time (between 0 to max given depth)
-        depth = rnd.randint(0, max_depth)
+        depth = max_depth
           
         # choosing the operator for current node
         x = my_operator()
@@ -121,7 +120,6 @@ def calculator(two_D_flag, root, x, flag):
         return
     
     if(root.is_leaf):
-        
         if(two_D_flag):
             if(root.operator == 'x1'): 
                 return x[0]
@@ -129,28 +127,26 @@ def calculator(two_D_flag, root, x, flag):
                 return x[1]                
             else: 
                 return root.operator        
-            
         else:
             if(root.operator == 'x'): 
                 return x
             else: 
                 return root.operator
-    
     else:
-        
         if(len(root.children)==1):
             val = calculator(two_D_flag, root.children[0], x, flag)
         else:       
             left_val = calculator(two_D_flag, root.children[0], x, flag)
             right_val = calculator(two_D_flag, root.children[1], x, flag)
-
         if (root.operator == 'sin'):
+            # print("we are in sin")
             try:
                 return math.sin(val)
             except:
                 flag = True
                 return 1
         elif (root.operator == 'cos'):
+            # print("we are in cos")
             try:
                 return math.cos(val)
             except:
@@ -161,13 +157,21 @@ def calculator(two_D_flag, root, x, flag):
         elif (root.operator == '-'):
             return left_val - right_val
         elif (root.operator == '*'):
-            return left_val * right_val
-        elif (root.operator == '/'):
-            if(right_val==0):
+            # print("we are in *")
+            try:
+                return left_val * right_val
+            except:
                 flag = True
-                return 1
-            else: return left_val / right_val
+                return 1                
+        elif (root.operator == '/'):
+            # print("we are in /")
+            try:
+                return left_val / right_val
+            except:
+                flag = True
+                return 1                
         elif (root.operator == '**'):
+            # print("we are in **")
             if(left_val==0 and right_val<0):
                 flag = True
                 return 1
@@ -191,11 +195,13 @@ def _mse(tree, list_x, list_y):
     for single_x in list_x:
         flag = False
         t_y = calculator(tree.two_D_flag, tree.root, single_x, flag)
+
         if(flag==True or t_y>100000 or t_y<-100000):
             t_y = 100000
 
         trees_y.append(t_y)
     mse = mean_squared_error(list_y, trees_y)
+
     return mse
 
 def calculating_mse(tree_list, X, Y):

@@ -15,13 +15,8 @@ def Genetic(X, Y, iteration_number):
 
     amount_of_no_change = 0
     
-    # population number zero
-    print("before pop0")
     list_of_parents = tree.random_trees(population_size, max_depth, two_D_flag)
-    print("after pop0")
     parents_best_mse, best_parent_tree = tree.calculating_mse(list_of_parents, X, Y)
-    print("after mse calculating")
-
     
     best_mse_eachGen = []
     best_tree_eachGen = []
@@ -44,12 +39,9 @@ def Genetic(X, Y, iteration_number):
         e = datetime.datetime.now()
 
         print ("time: %s:%s:%s" % (e.hour, e.minute, e.second))
-
-        print("before making children")
+ 
         list_of_children = children.making_children(list_of_parents, k, pc, pm)
-        print("after making children")
         best_mse, best_tree = tree.calculating_mse(list_of_children, X, Y)
-        print("after mse calculating")
         list_of_parents = list_of_children
                 
         best_tree_eachGen.append(copy.deepcopy(best_tree))
@@ -71,7 +63,7 @@ def Genetic(X, Y, iteration_number):
     final_best_tree_preorder = tree.PreorderTraversal(final_best_tree.root)   
     final_best_tree_inorder = tree.InorderTraversal(final_best_tree.root)   
     
-    print("after traversal")  
+    # print("after traversal")  
     
     return best_sofar_mse, i, final_best_tree_preorder, final_best_tree_inorder     
 
@@ -80,22 +72,21 @@ if __name__ == "__main__":
     
     # random.seed(1)
     
-    input_file_name = '.\\GA\\c1.csv'
+    input_file_name = '.\\GA\\c2.csv'
     two_D_flag = False
 
     X, Y = reading_data.input_output(input_file_name)
     
-    no_change_limit = 10
-    iteration_of_genetic = 10
-    population_size = 100
-    amount_of_generations = 30
-    max_depth = 8
+    no_change_limit = 50
+    iteration_of_genetic = 30
+    population_size = 1000
+    amount_of_generations = 300
+    max_depth = 3
 
     k = 3 # k tournoment parameter
     pc = 0.5 # the probblity of cross-over
     pm = 0.5 # the probblity of mutation
 
-    
     # get the start time
     st = time.time()
     
@@ -103,7 +94,7 @@ if __name__ == "__main__":
     best_trees = []
     sum = 0
 
-    file_execution_name = 'result_c1'
+    file_execution_name = 'result_c2'
 
     for i in range(iteration_of_genetic):
         iteration_st = time.time()
