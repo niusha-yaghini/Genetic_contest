@@ -1,68 +1,133 @@
+iteration 0, generation 1, mse: 9.498476007960262, tree preorder: +,5,,cos,cos,x,,,,, tree inorder: (5+cos(cos(x)))
+iteration 0, generation 2, mse: 9.498476007960262, tree preorder: +,5,,cos,cos,x,,,,, tree inorder: (5+cos(cos(x)))
+iteration 0, generation 3, mse: 8.21464296482274, tree preorder: -,*,x,,sin,2,,,,sin,cos,x,,,,, tree inorder: ((x*sin(2))-sin(cos(x)))
+iteration 0, generation 4, mse: 8.21464296482274, tree preorder: -,*,x,,sin,2,,,,sin,cos,x,,,,, tree inorder: ((x*sin(2))-sin(cos(x)))
+iteration 0, generation 5, mse: 8.21464296482274, tree preorder: -,*,x,,sin,2,,,,sin,cos,x,,,,, tree inorder: ((x*sin(2))-sin(cos(x)))
+iteration 0, generation 6, mse: 7.861781682427344, tree preorder: -,*,x,,sin,7,,,,/,-,x,,x,,,+,x,,cos,cos,/,9,,x,,,,,,,, tree inorder: ((x*sin(7))-((x-x)/(x+cos(cos((9/x))))))
+iteration 0, generation 7, mse: 7.56365108125472, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,8,,x,,,,, tree inorder: ((x*sin(2))-((x-4)/(8+x)))
+iteration 0, generation 8, mse: 7.331745028058032, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,8,,5,,,,, tree inorder: ((x*sin(2))-((x-4)/(8+5)))
+iteration 0, generation 9, mse: 7.331745028058032, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,8,,5,,,,, tree inorder: ((x*sin(2))-((x-4)/(8+5)))
+iteration 0, generation 10, mse: 7.331745028058032, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,8,,5,,,,, tree inorder: ((x*sin(2))-((x-4)/(8+5)))
+iteration 0, generation 11, mse: 7.331745028058032, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,8,,5,,,,, tree inorder: ((x*sin(2))-((x-4)/(8+5)))
+iteration 0, generation 12, mse: 7.220699438694647, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,x,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+x)))
+iteration 0, generation 13, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 14, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 15, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 16, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 17, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 18, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 19, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 20, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 21, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 22, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration 0, generation 23, mse: 6.31608108755913, tree preorder: -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,,, tree inorder: ((x*sin(2))-((x-4)/(3+2)))
+iteration number 0:
 iteration number 0: 
-mse = 0.0042914049326220095, generation nums = 20 
-preorder = ['**', ['sin', ['cos', ['**', ['sin', 8], ['+', 5, ['+', 5, 'x']]]]], ['/', ['sin', 9], 'x']] 
-Execution time of iteration: 27.033594846725464 seconds
+mse = 6.31608108755913, generation nums = 23 
+preorder = -,*,x,,sin,2,,,,/,-,x,,4,,,+,3,,2,,,, 
+inorder = ((x*sin(2))-((x-4)/(3+2))) 
+Execution time of iteration: 251.2348816394806 seconds
  
-iteration number 0: 
-mse = 0.00818318845922127, generation nums = 21 
-preorder = coscos9 
-inorder = cos(cos(9)) 
-Execution time of iteration: 4.75886869430542 seconds
- 
+iteration 1, generation 1, mse: 10.5974454883, tree preorder: x,, tree inorder: x
+iteration 1, generation 2, mse: 9.912527519866371, tree preorder: +,sin,*,x,,x,,,,*,cos,6,,,x,,,, tree inorder: (sin((x*x))+(cos(6)*x))
+iteration 1, generation 3, mse: 9.912527519866371, tree preorder: +,sin,*,x,,x,,,,*,cos,6,,,x,,,, tree inorder: (sin((x*x))+(cos(6)*x))
+iteration 1, generation 4, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 5, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 6, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 7, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 8, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 9, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 10, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 11, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 12, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 13, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration 1, generation 14, mse: 9.237665287766431, tree preorder: /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,,, tree inorder: ((x*(8*7))/((5/5)+(9*x)))
+iteration number 1:
 iteration number 1: 
-mse = 0.008177867270959836, generation nums = 11 
-preorder = cossin2 
-inorder = cos(sin(2)) 
-Execution time of iteration: 4.374476432800293 seconds
+mse = 9.237665287766431, generation nums = 14 
+preorder = /,*,x,,*,8,,7,,,,+,/,5,,5,,,*,9,,x,,,, 
+inorder = ((x*(8*7))/((5/5)+(9*x))) 
+Execution time of iteration: 73.42662811279297 seconds
  
+iteration 2, generation 1, mse: 10.5974454883, tree preorder: x,, tree inorder: x
+iteration 2, generation 2, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 2, generation 3, mse: 9.889009785443786, tree preorder: /,+,8,,8,,,+,2,,cos,/,-,x,,2,,,+,5,,x,,,,,,, tree inorder: ((8+8)/(2+cos(((x-2)/(5+x)))))
+iteration 2, generation 4, mse: 7.92613293096512, tree preorder: /,+,8,,8,,,+,2,,cos,/,-,x,,2,,,+,5,,3,,,,,,, tree inorder: ((8+8)/(2+cos(((x-2)/(5+3)))))
+iteration 2, generation 5, mse: 6.864919235224227, tree preorder: /,+,8,,x,,,+,2,,cos,/,-,x,,2,,,x,,,,,, tree inorder: ((8+x)/(2+cos(((x-2)/x))))
+iteration 2, generation 6, mse: 5.958661134005003, tree preorder: /,+,x,,8,,,+,2,,cos,/,-,x,,2,,,+,5,,3,,,,,,, tree inorder: ((x+8)/(2+cos(((x-2)/(5+3)))))
+iteration 2, generation 7, mse: 5.958661134005003, tree preorder: /,+,x,,8,,,+,2,,cos,/,-,x,,2,,,+,5,,3,,,,,,, tree inorder: ((x+8)/(2+cos(((x-2)/(5+3)))))
+iteration 2, generation 8, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 9, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 10, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 11, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 12, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 13, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 14, mse: 5.861557247496892, tree preorder: /,+,6,,x,,,+,2,,cos,+,**,9,,8,,,*,4,,1,,,,,,, tree inorder: ((6+x)/(2+cos(((9**8)+(4*1)))))
+iteration 2, generation 15, mse: 4.390463657383119, tree preorder: /,+,6,,x,,,+,2,,**,cos,+,x,,x,,,,sin,**,x,,x,,,,,,, tree inorder: ((6+x)/(2+(cos((x+x))**sin((x**x)))))
+iteration 2, generation 16, mse: 4.390463657383119, tree preorder: /,+,6,,x,,,+,2,,**,cos,+,x,,x,,,,sin,**,x,,x,,,,,,, tree inorder: ((6+x)/(2+(cos((x+x))**sin((x**x)))))
+iteration 2, generation 17, mse: 4.390463657383119, tree preorder: /,+,6,,x,,,+,2,,**,cos,+,x,,x,,,,sin,**,x,,x,,,,,,, tree inorder: ((6+x)/(2+(cos((x+x))**sin((x**x)))))
+iteration 2, generation 18, mse: 4.390463657383119, tree preorder: /,+,6,,x,,,+,2,,**,cos,+,x,,x,,,,sin,**,x,,x,,,,,,, tree inorder: ((6+x)/(2+(cos((x+x))**sin((x**x)))))
+iteration 2, generation 19, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 20, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 21, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 22, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 23, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 24, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 25, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 26, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 27, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 28, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration 2, generation 29, mse: 2.8559913422170773, tree preorder: /,+,6,,x,,,+,2,,**,cos,x,,,6,,,,, tree inorder: ((6+x)/(2+(cos(x)**6)))
+iteration number 2:
 iteration number 2: 
-mse = 0.006497513128127617, generation nums = 27 
-preorder = coscos+**cos/xx*1-sincoscos**xsin9xsin+73 
-inorder = cos(cos(((cos((x/x))**(1*(sin(cos(cos((x**sin(9)))))-x)))+sin((7+3))))) 
-Execution time of iteration: 50.780689001083374 seconds
+mse = 2.8559913422170773, generation nums = 29 
+preorder = /,+,6,,x,,,+,2,,**,cos,x,,,6,,,, 
+inorder = ((6+x)/(2+(cos(x)**6))) 
+Execution time of iteration: 163.58698987960815 seconds
  
+iteration 3, generation 1, mse: 10.5974454883, tree preorder: x,, tree inorder: x
+iteration 3, generation 2, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 3, generation 3, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 3, generation 4, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 3, generation 5, mse: 9.584202355912247, tree preorder: +,sin,4,,,x,,, tree inorder: (sin(4)+x)
+iteration 3, generation 6, mse: 9.584202355912247, tree preorder: +,sin,4,,,x,,, tree inorder: (sin(4)+x)
+iteration 3, generation 7, mse: 9.584202355912247, tree preorder: +,sin,4,,,x,,, tree inorder: (sin(4)+x)
+iteration 3, generation 8, mse: 9.584202355912247, tree preorder: +,sin,4,,,x,,, tree inorder: (sin(4)+x)
+iteration 3, generation 9, mse: 9.507411596640422, tree preorder: +,sin,5,,,x,,, tree inorder: (sin(5)+x)
+iteration 3, generation 10, mse: 9.507411596640422, tree preorder: +,sin,5,,,x,,, tree inorder: (sin(5)+x)
+iteration 3, generation 11, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 12, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 13, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 14, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 15, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 16, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 17, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 18, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 19, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 20, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration 3, generation 21, mse: 9.207215880636234, tree preorder: +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,,, tree inorder: (sin(4)+(sin((sin(5)+x))+x))
+iteration number 3:
 iteration number 3: 
-mse = 0.008177867270959836, generation nums = 14 
-preorder = cossin2 
-inorder = cos(sin(2)) 
-Execution time of iteration: 4.646582126617432 seconds
+mse = 9.207215880636234, generation nums = 21 
+preorder = +,sin,4,,,+,sin,+,sin,5,,,x,,,,x,,, 
+inorder = (sin(4)+(sin((sin(5)+x))+x)) 
+Execution time of iteration: 13.583250761032104 seconds
  
+iteration 4, generation 1, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 2, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 3, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 4, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 5, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 6, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 7, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 8, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 9, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 10, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration 4, generation 11, mse: 10.102356886966666, tree preorder: 6,, tree inorder: 6
+iteration number 4:
 iteration number 4: 
-mse = 0.008177867270959836, generation nums = 12 
-preorder = cossin2 
-inorder = cos(sin(2)) 
-Execution time of iteration: 1.8644797801971436 seconds
+mse = 10.102356886966666, generation nums = 11 
+preorder = 6, 
+inorder = 6 
+Execution time of iteration: 11.043880224227905 seconds
  
-iteration number 5: 
-mse = 0.007512403640533658, generation nums = 24 
-preorder = sinsincoscoscoscos**xx 
-inorder = sin(sin(cos(cos(cos(cos((x**x))))))) 
-Execution time of iteration: 5.19234037399292 seconds
- 
-iteration number 6: 
-mse = 0.00818318845922127, generation nums = 14 
-preorder = coscos9 
-inorder = cos(cos(9)) 
-Execution time of iteration: 2.42248797416687 seconds
- 
-iteration number 7: 
-mse = 0.006955874731051317, generation nums = 31 
-preorder = sinsinsinsincos//16x 
-inorder = sin(sin(sin(sin(cos(((1/6)/x)))))) 
-Execution time of iteration: 7.17105507850647 seconds
- 
-iteration number 8: 
-mse = 0.008185355536180928, generation nums = 20 
-preorder = sin/23 
-inorder = sin((2/3)) 
-Execution time of iteration: 3.44578218460083 seconds
- 
-iteration number 9: 
-mse = 0.007054086769060078, generation nums = 37 
-preorder = sinsincoscoscos/3x 
-inorder = sin(sin(cos(cos(cos((3/x)))))) 
-Execution time of iteration: 10.317999839782715 seconds
- 
-the best mse of all: 0.006497513128127617 
-the average mse of all: 0.007710521253627564 
-Execution time of all: 94.98563051223755 seconds

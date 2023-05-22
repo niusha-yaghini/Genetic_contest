@@ -82,17 +82,13 @@ class Tree:
         return n          
 
 def PreorderTraversal(node):
-    res = ''
     if(node.is_leaf):
-        return f"{node.operator}"
+        return f"{node.operator},"
     else:
-        res += (node.operator)
         if(len(node.children)) == 1:
-            res += (PreorderTraversal(node.children[0]))
+            return f"{node.operator},{PreorderTraversal(node.children[0])},"
         else:
-            res += (PreorderTraversal(node.children[0]))
-            res += (PreorderTraversal(node.children[1]))  
-    return res  
+            return f"{node.operator},{PreorderTraversal(node.children[0])},{PreorderTraversal(node.children[1])},"
         
 def InorderTraversal(node):
     if(node.is_leaf):

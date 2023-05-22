@@ -6,6 +6,7 @@ import reading_data
 import time
 import datetime
 import random
+import reading_data_2D
     
 def Termination_condition(best_sofar_mse):
     if(best_sofar_mse<0.0001): return True
@@ -54,6 +55,19 @@ def Genetic(X, Y, iteration_number):
             amount_of_no_change = 0
 
         best_mse_of_all.append(best_sofar_mse)
+        
+        best_tree_sofar = None
+        for bt in best_tree_eachGen:
+            if bt.mse==best_sofar_mse:
+                best_tree_sofar = bt
+        best_tree_sofar_preorder = tree.PreorderTraversal(best_tree_sofar.root)   
+        best_tree_sofar_inorder = tree.InorderTraversal(best_tree_sofar.root)   
+        
+        result = open(f'{file_execution_name}.txt', 'a')
+        result.write(f"iteration {iteration_number}, generation {i+1}, mse: {best_sofar_mse}, tree preorder: {best_tree_sofar_preorder}, tree inorder: {best_tree_sofar_inorder}\n")
+        result.close()
+
+    result = open(f'{file_execution_name}.txt', 'a')
 
     final_best_tree = None
     for bt in best_tree_eachGen:
@@ -72,15 +86,18 @@ if __name__ == "__main__":
     
     # random.seed(1)
     
-    input_file_name = '.\\GA\\c2.csv'
-    two_D_flag = False
+    input_file_name = '.\\GA\\challenge3.csv'
+    two_D_flag = True
 
-    X, Y = reading_data.input_output(input_file_name)
+    if (two_D_flag):
+        X, Y = reading_data_2D.input_output(input_file_name)
+    else:
+        X, Y = reading_data.input_output(input_file_name)
     
-    no_change_limit = 50
-    iteration_of_genetic = 30
-    population_size = 1000
-    amount_of_generations = 300
+    no_change_limit = 10
+    iteration_of_genetic = 20
+    population_size = 100
+    amount_of_generations = 50
     max_depth = 3
 
     k = 3 # k tournoment parameter
@@ -94,13 +111,14 @@ if __name__ == "__main__":
     best_trees = []
     sum = 0
 
-    file_execution_name = 'result_c2'
+    file_execution_name = 'result_c3'
 
     for i in range(iteration_of_genetic):
         iteration_st = time.time()
         result = open(f'{file_execution_name}.txt', 'a')
         
         print(f"iteration number {i}:")
+        result.write(f"iteration number {i}:\n")
         mse, gen_num, preorder_tree, inorder_tree = Genetic(X, Y, i)
         print(f"mse = {mse}, generation nums = {gen_num} \n")
         best_mses.append(mse)
