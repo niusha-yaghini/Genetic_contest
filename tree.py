@@ -192,7 +192,7 @@ def _mse(tree, list_x, list_y):
         flag = False
         t_y = calculator(tree.two_D_flag, tree.root, single_x, flag)
 
-        if(flag==True or t_y>100000 or t_y<-100000):
+        if(flag==True or t_y>100000 or t_y<-100000 or t_y==math.isnan(t_y)):
             t_y = 100000
 
         trees_y.append(t_y)

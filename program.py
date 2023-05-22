@@ -60,12 +60,17 @@ def Genetic(X, Y, iteration_number):
         for bt in best_tree_eachGen:
             if bt.mse==best_sofar_mse:
                 best_tree_sofar = bt
-        best_tree_sofar_preorder = tree.PreorderTraversal(best_tree_sofar.root)   
-        best_tree_sofar_inorder = tree.InorderTraversal(best_tree_sofar.root)   
-        
-        result = open(f'{file_execution_name}.txt', 'a')
-        result.write(f"iteration {iteration_number}, generation {i+1}, mse: {best_sofar_mse}, tree preorder: {best_tree_sofar_preorder}, tree inorder: {best_tree_sofar_inorder}\n")
-        result.close()
+        if(best_tree_sofar==None):
+            result = open(f'{file_execution_name}.txt', 'a')
+            result.write(f"iteration {iteration_number}, generation {i+1}, mse: {best_sofar_mse}, tree preorder: none\n")
+            result.close()
+        else:
+            best_tree_sofar_preorder = tree.PreorderTraversal(best_tree_sofar.root)   
+            best_tree_sofar_inorder = tree.InorderTraversal(best_tree_sofar.root)   
+            
+            result = open(f'{file_execution_name}.txt', 'a')
+            result.write(f"iteration {iteration_number}, generation {i+1}, mse: {best_sofar_mse}, tree preorder: {best_tree_sofar_preorder}, tree inorder: {best_tree_sofar_inorder}\n")
+            result.close()
 
     result = open(f'{file_execution_name}.txt', 'a')
 
@@ -86,8 +91,8 @@ if __name__ == "__main__":
     
     # random.seed(1)
     
-    input_file_name = '.\\GA\\challenge3.csv'
-    two_D_flag = True
+    input_file_name = '.\\GA\\challenge1.csv'
+    two_D_flag = False
 
     if (two_D_flag):
         X, Y = reading_data_2D.input_output(input_file_name)
@@ -98,7 +103,7 @@ if __name__ == "__main__":
     iteration_of_genetic = 20
     population_size = 100
     amount_of_generations = 50
-    max_depth = 3
+    max_depth = 4
 
     k = 3 # k tournoment parameter
     pc = 0.5 # the probblity of cross-over
@@ -111,7 +116,7 @@ if __name__ == "__main__":
     best_trees = []
     sum = 0
 
-    file_execution_name = 'result_c3'
+    file_execution_name = 'result_c1'
 
     for i in range(iteration_of_genetic):
         iteration_st = time.time()
