@@ -83,17 +83,27 @@ class Tree:
         return n          
 
 def PreorderTraversal(node):
-    res = []
+    res = ''
     if(node.is_leaf):
-        return node.operator
+        return f"{node.operator}"
     else:
-        res.append(node.operator)
+        res += (node.operator)
         if(len(node.children)) == 1:
-            res.append(PreorderTraversal(node.children[0]))
+            res += (PreorderTraversal(node.children[0]))
         else:
-            res.append(PreorderTraversal(node.children[0]))
-            res.append(PreorderTraversal(node.children[1]))    
+            res += (PreorderTraversal(node.children[0]))
+            res += (PreorderTraversal(node.children[1]))  
+    return res  
         
+def InorderTraversal(node):
+    if(node.is_leaf):
+        return f"{node.operator}"
+    else:
+        if(len(node.children)) == 1:
+            return f"{node.operator}({InorderTraversal(node.children[0])})"
+        else:
+            return f"({InorderTraversal(node.children[0])}{node.operator}{InorderTraversal(node.children[1])})"
+
 def random_trees(amount, max_depth, two_D_flag):
     # making a list of all random trees (generation 0)
 
@@ -191,7 +201,6 @@ def _mse(tree, list_x, list_y):
 def calculating_mse(tree_list, X, Y):
     # calculating the average-mse and best-mse for all of our trees and given inputs and outputs
     
-    # i = 1
     mse_sum = 0
     best_mse = float('inf')
     best_tree = None
@@ -201,7 +210,5 @@ def calculating_mse(tree_list, X, Y):
         if (t.mse<best_mse):
             best_mse = t.mse
             best_tree = t
-        # print(f"tree number {i} = {t.in_order} and its mse is = {t.mse}")
-        # i += 1
 
     return best_mse, best_tree

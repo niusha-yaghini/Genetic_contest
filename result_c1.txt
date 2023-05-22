@@ -1,0 +1,79 @@
+iteration number 0: 
+mse = 0.0042914049326220095, generation nums = 20 
+preorder = ['**', ['sin', ['cos', ['**', ['sin', 8], ['+', 5, ['+', 5, 'x']]]]], ['/', ['sin', 9], 'x']] 
+Execution time of iteration: 27.033594846725464 seconds
+ 
+iteration number 1: 
+mse = 0.007102199928635049, generation nums = 27 
+preorder = cos**cos9cos*/-78x**cos9cos*8+49 
+inorder = cos((cos(9)**cos((((7-8)/x)*(cos(9)**cos((8*(4+9)))))))) 
+Execution time of iteration: 29.65973424911499 seconds
+ 
+iteration number 2: 
+mse = 0.007566469812958035, generation nums = 27 
+preorder = coscos*cos*1sin1sincos****cos68**cos2/x1 
+inorder = cos(cos((cos((1*sin(1)))*sin(cos(((cos(6)**8)**(cos(2)**(x/1)))))))) 
+Execution time of iteration: 33.751542806625366 seconds
+ 
+iteration number 3: 
+mse = 0.008176625598224853, generation nums = 12 
+preorder = /8+67 
+inorder = (8/(6+7)) 
+Execution time of iteration: 4.34373140335083 seconds
+ 
+iteration number 4: 
+mse = 0.00747536277115266, generation nums = 21 
+preorder = coscos*x/sin7+/94x 
+inorder = cos(cos((x*(sin(7)/((9/4)+x))))) 
+Execution time of iteration: 12.510777950286865 seconds
+ 
+iteration number 5: 
+mse = 0.006983707074028515, generation nums = 16 
+preorder = sincossin**4**4x 
+inorder = sin(cos(sin((4**(4**x))))) 
+Execution time of iteration: 6.097836971282959 seconds
+ 
+iteration number 6: 
+mse = 0.006922239405813586, generation nums = 29 
+preorder = /6+9cos**7+xx 
+inorder = (6/(9+cos((7**(x+x))))) 
+Execution time of iteration: 23.79921865463257 seconds
+ 
+iteration number 7: 
+mse = 0.00818318845922127, generation nums = 10 
+preorder = coscos9 
+inorder = cos(cos(9)) 
+Execution time of iteration: 5.836243629455566 seconds
+ 
+iteration number 8: 
+mse = 0.008177867270959836, generation nums = 17 
+preorder = cossin2 
+inorder = cos(sin(2)) 
+Execution time of iteration: 8.129075527191162 seconds
+ 
+iteration number 9: 
+mse = 0.006851498454675208, generation nums = 29 
+preorder = coscos/cos/coscos/cos/cos9cos++x7sinx2x2 
+inorder = cos(cos((cos((cos(cos((cos((cos(9)/cos(((x+7)+sin(x)))))/2)))/x))/2))) 
+Execution time of iteration: 12.858455181121826 seconds
+ 
+the best mse of all: 0.006851498454675208 
+the average mse of all: 0.007561702604662886 
+Execution time of all: 141.74415349960327 secondsiteration number 0: 
+mse = 0.008177867270959836, generation nums = 22 
+preorder = cossin2 
+inorder = cos(sin(2)) 
+Execution time of iteration: 7.49997091293335 seconds
+ 
+iteration number 1: 
+mse = 0.007333975854030969, generation nums = 29 
+preorder = sincossin**4**3x 
+inorder = sin(cos(sin((4**(3**x))))) 
+Execution time of iteration: 83.89426898956299 seconds
+ 
+iteration number 2: 
+mse = 0.007508140373070029, generation nums = 25 
+preorder = coscos/2++4coscosx/1x 
+inorder = cos(cos((2/((4+cos(cos(x)))+(1/x))))) 
+Execution time of iteration: 21.937366008758545 seconds
+ 

@@ -5,6 +5,7 @@ import copy
 import reading_data
 import time
 import datetime
+import random
     
 def Termination_condition(best_sofar_mse):
     if(best_sofar_mse<0.0001): return True
@@ -15,9 +16,12 @@ def Genetic(X, Y, iteration_number):
     amount_of_no_change = 0
     
     # population number zero
-    print("generation number 0\n")
+    print("before pop0")
     list_of_parents = tree.random_trees(population_size, max_depth, two_D_flag)
+    print("after pop0")
     parents_best_mse, best_parent_tree = tree.calculating_mse(list_of_parents, X, Y)
+    print("after mse calculating")
+
     
     best_mse_eachGen = []
     best_tree_eachGen = []
@@ -41,16 +45,16 @@ def Genetic(X, Y, iteration_number):
 
         print ("time: %s:%s:%s" % (e.hour, e.minute, e.second))
 
-
-        # print(f"population number {i+1}")
+        print("before making children")
         list_of_children = children.making_children(list_of_parents, k, pc, pm)
+        print("after making children")
         best_mse, best_tree = tree.calculating_mse(list_of_children, X, Y)
+        print("after mse calculating")
         list_of_parents = list_of_children
                 
         best_tree_eachGen.append(copy.deepcopy(best_tree))
         best_mse_eachGen.append(best_mse)
         best_sofar_mse = min(best_mse_eachGen)
-        # print("best mse so far: ", best_sofar_mse)
         
         if(best_sofar_mse == best_mse_of_all[-1]):
             amount_of_no_change += 1
@@ -60,26 +64,31 @@ def Genetic(X, Y, iteration_number):
         best_mse_of_all.append(best_sofar_mse)
 
     final_best_tree = None
-    for i in best_tree_eachGen:
-        if i.mse==best_sofar_mse:
-            final_best_tree = i
-            
-    final_best_tree_preorder = tree.PreorderTraversal(final_best_tree.root)     
+    for bt in best_tree_eachGen:
+        if bt.mse==best_sofar_mse:
+            final_best_tree = bt
     
-    return best_sofar_mse, i, final_best_tree_preorder       
+    final_best_tree_preorder = tree.PreorderTraversal(final_best_tree.root)   
+    final_best_tree_inorder = tree.InorderTraversal(final_best_tree.root)   
+    
+    print("after traversal")  
+    
+    return best_sofar_mse, i, final_best_tree_preorder, final_best_tree_inorder     
 
      
 if __name__ == "__main__":
+    
+    # random.seed(1)
     
     input_file_name = '.\\GA\\c1.csv'
     two_D_flag = False
 
     X, Y = reading_data.input_output(input_file_name)
     
-    no_change_limit = 50
-    iteration_of_genetic = 1
-    population_size = 50
-    amount_of_generations = 10
+    no_change_limit = 10
+    iteration_of_genetic = 10
+    population_size = 100
+    amount_of_generations = 30
     max_depth = 8
 
     k = 3 # k tournoment parameter
@@ -98,23 +107,25 @@ if __name__ == "__main__":
 
     for i in range(iteration_of_genetic):
         iteration_st = time.time()
-        result = open(f'{file_execution_name}', 'a')
+        result = open(f'{file_execution_name}.txt', 'a')
         
         print(f"iteration number {i}:")
-        mse, gen_num, preorder_tree = Genetic(X, Y, i)
+        mse, gen_num, preorder_tree, inorder_tree = Genetic(X, Y, i)
         print(f"mse = {mse}, generation nums = {gen_num} \n")
         best_mses.append(mse)
         sum += mse
         result.write(f"iteration number {i}: \n")        
         result.write(f"mse = {mse}, generation nums = {gen_num} \n")
         result.write(f"preorder = {preorder_tree} \n")
+        result.write(f"inorder = {inorder_tree} \n")
+
         iteration_et = time.time()
         iteration_elapsed_time = iteration_et - iteration_st
         result.write(f"Execution time of iteration: {iteration_elapsed_time} seconds\n \n")
         
         result.close()
 
-    result = open(f'{file_execution_name}', 'a')
+    result = open(f'{file_execution_name}.txt', 'a')
         
     # get the end time
     et = time.time()
